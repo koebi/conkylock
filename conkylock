@@ -1,5 +1,5 @@
 #!/bin/sh
-i3lockpath= /home/koebi/i3lock/i3lock -e -t -f -i /home/koebi/bilder/background_zelda.png
+i3lockpath= /usr/bin/i3lock
 
 $i3lockpath
 i3lockpid=$!
@@ -12,7 +12,6 @@ then
     exit 1
 fi
 
-#conky -c .conkyrc_rings -w "$winid" &
 conky -w "$winid" &
 conkypid=$!
 
