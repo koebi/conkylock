@@ -16,6 +16,15 @@ I use my .i3/config-file to map conkylock to my ThinkVantage-Button using
 Note that you might have to change the i3lockpath to match your personal
 settings. Right now, it just starts i3lock as-is.
 
+The conkyrc is configured to display
+
+	BAT: 101 %
+	TIME: DD/MM HH:MM
+
+at the moment, and since this works for me, I probably am not going to change
+anything. The current colors are a light blue similar to the i3-default-blue
+for the BAT/TIME and white for the actual values.
+
 Why this exists
 ---------------
 
