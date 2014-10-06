@@ -10,6 +10,7 @@ usage
 Put the given conkyrc in ~/.conkyrc and the given conkylock-script in any place
 you want.
 I use my .i3/config-file to map conkylock to my ThinkVantage-Button using
+
 	bindcode 156 exec ~/.conkylock
 
 Note that you might have to change the i3lockpath to match your personal
