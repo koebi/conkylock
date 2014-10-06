@@ -1,0 +1,175 @@
+# Conky, a system monitor, based on torsmo
+
+#####################################################################
+# Config Options
+#####################################################################
+
+# position on the screen
+# available options: {top,middle,bottom}_{left,middle,right}, none
+# abbreviate to {t,m,b}_{l,m,r}
+# alignment tl
+
+# if set to true, conky will be forked to the background when started
+# TODO: where do we want it to go when using with i3lock??
+background no
+
+# margin between border and text in pixels
+# border_inner_margin 10
+
+# margin between border and edge of window in pixels
+# border_outer_margin 10
+
+# border width in pixels
+border_width 0
+
+# predefine a color for use inside of TEXT, substitute N by a digit
+# between 0 and 9. When specifying in hex, ditch the leading hash(#)
+color0 4C7899
+
+# number of samples to average for CPU monitoring
+cpu_avg_samples 2
+
+# default width and height for bars in pixels
+# default_bar_size 0 6
+
+# default color and border color
+# give a color name or a hex value, omitting the leading hash
+# sadly, you can't set this to a predefined color…
+default_color white
+
+# default width and height for gauges
+# default_gauge_size 25 25
+
+# default height and width for graphs
+# default_grap_size 0 25
+
+# default outline color
+default_outline_color white
+
+# default shading and border's shading color
+default_shade_color white
+
+# enable to disable the inotify-based auto config reload feature
+# disable_auto_reload yes TODO: bool, int, ???
+
+# number of samples to average for disk I/O monitoring
+# diskio_avg_samples 3
+
+# specifys an X display to connect to
+# display TODO: example??
+
+# use the xdbe extension to eliminate flicker
+# double_buffer yes TODO: bool, int, ???
+
+# draw borders around text?
+draw_borders no
+
+# draw borders around graphs?
+draw_graph_borders yes
+
+# draw outlines?
+draw_outline no
+
+# draw shades?
+draw_shades no
+
+# put an extra newline at the end when writing to stdout
+extra_newline no
+
+# use anti-aliased font and stuff
+use_xft yes
+
+# alpha of xft font. must be be between 1 and 0
+# xftalpha 0
+
+# specifies xft font
+xftfont monofur:size=10
+
+# if enabled, values will be printed in human readable format
+format_human_readable yes
+
+# gap between right or left border of screen
+gap_x 50
+
+# gab between top or bottom border of screen
+gap_y 600
+
+#TODO: mpd in conky???#
+
+# minimum width and heigth of window
+minimum_size 5 5
+
+# number of samples to average for net data
+net_avg_samples 2
+
+# substact (file system) buffers from used memory
+no_buffers yes
+
+# print text to stdout
+out_to_console no
+
+# print text to stderr
+out_to_stderr no
+
+# bool, create own window to draw?
+#own_window yes
+
+# sets the WM_CLASS name
+#own_window_class Conky
+
+# if own window is yes, specify type {normal,desktop,dock,panel,override}
+# TODO: add more Information
+#own_window_type desktop
+
+# border stippling in pixels
+stippled_borders 0
+
+# update interval in seconds
+update_interval 5.0
+
+# if true, text is rendered in upper case
+uppercase no
+
+# adds spaces around objects to stop them from moving others around
+# TODO: add more info
+use_spacer none
+
+# shows max value in scaled graphs
+show_graph_scale no
+
+# shows time range covered by a graph
+show_graph_range no
+
+#####################################################################
+# Text to be formatted
+# note: whitespace is fucking significant
+#####################################################################
+
+TEXT
+${color0}BAT: ${color white}$battery_percent %
+${color0}TIME: ${color white}${time %d/%m %H:%M}
+
+
+#####################################################################
+# Default text, kept for reference
+#####################################################################
+#${scroll 16 $nodename - $sysname $kernel on $machine | }
+#$hr
+#${color grey}Uptime:$color $uptime
+#${color grey}Frequency (in MHz):$color $freq
+#${color grey}Frequency (in GHz):$color $freq_g
+#${color grey}RAM Usage:$color $mem/$memmax - $memperc% ${membar 4}
+#${color grey}Swap Usage:$color $swap/$swapmax - $swapperc% ${swapbar 4}
+#${color grey}CPU Usage:$color $cpu% ${cpubar 4}
+#${color grey}Processes:$color $processes  ${color grey}Running:$color $running_processes
+#$hr
+#${color grey}File systems:
+# / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
+#${color grey}Networking:
+#Up:$color ${upspeed eth0} ${color grey} - Down:$color ${downspeed eth0}
+#$hr
+#${color grey}Name              PID   CPU%   MEM%
+#${color lightgrey} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+#${color lightgrey} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+#${color lightgrey} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+#${color lightgrey} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}

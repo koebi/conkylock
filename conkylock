@@ -1,0 +1,20 @@
+#!/bin/sh
+i3lockpath= /home/koebi/i3lock/i3lock -e -t -f -i /home/koebi/bilder/background_zelda.png
+
+$i3lockpath
+i3lockpid=$!
+sleep 0.5
+
+winid=`xwininfo -name "i3lock" | grep "Window id" | grep -oE "0x[0-9a-f]+"`
+if [ -z "$winid" ]
+then
+    echo "Could not find i3lock window"
+    exit 1
+fi
+
+#conky -c .conkyrc_rings -w "$winid" &
+conky -w "$winid" &
+conkypid=$!
+
+wait $i3lockpid
+kill $conkypid
